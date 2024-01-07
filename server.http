@@ -1,0 +1,59 @@
+### register user
+POST http://localhost:3000/blog-api/register
+Content-Type: application/json
+
+{
+    "name":"newsca",
+    "email":"tessc@155.com",
+    "password":"newUser@123"
+}
+
+#### login user
+POST http://localhost:3000/blog-api/login
+Content-Type: application/json
+
+{
+     "email":"test@123.com",
+    "password":"test@123"
+}
+
+
+##############################################
+#### posting blog
+POST http://localhost:3000/blog-api/blogs/post-blog
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzllNjJlNmQxYTE4MjcwNTAxNWM0ZiIsImVtYWlsIjoidGVzdEAxMjM0LmNvbSIsImlhdCI6MTcwMjQ4NzYxNH0.iMR3p1aQR8vYQFquqBrOJ8RgO9v07DVbnEtNBGXN1SA
+
+{
+    "title":"goingToWork",
+    "description":"random description that conatains two or more line in it",
+    "image":"https://res.cloudinary.com/ddl5dr4cw/image/upload/v1700855887/ozfoq78gljp0bfm2hkwt.jpg"
+}
+
+### get all bologs irrespect to user 
+//update seach query 
+
+GET http://localhost:3000/blog-api/blogs/?skip=0&seacrh=""
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzM1Y2M2NGIyZWFlZDIzMTliNzYzNyIsImVtYWlsIjoidGVzdEAxMjMuY29tIiwiaWF0IjoxNzAyMDU5MjMxfQ.FFJz3TN56l_COJ9HHP9XjsLlEZ34gHPQ32mQf7mSoVc
+
+### get blog by id with comments and likes
+GET http://localhost:3000/blog-api/blogs/657496dd132660b438d1e177
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzM1Y2M2NGIyZWFlZDIzMTliNzYzNyIsImVtYWlsIjoidGVzdEAxMjMuY29tIiwiaWF0IjoxNzAyMDU5MjMxfQ.FFJz3TN56l_COJ9HHP9XjsLlEZ34gHPQ32mQf7mSoVc
+
+### get only userpost
+GET http://localhost:3000/blog-api/blogs/user-post
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzM1Y2M2NGIyZWFlZDIzMTliNzYzNyIsInVzZXIiOiJ0ZXN0MSIsImVtYWlsIjoidGVzdEAxMjMuY29tIiwiaWF0IjoxNzAzNTMzMTIzfQ.a81_DOEsMyE2K_thi5uMhvpYqfCu1H-Qv8C7xYMhANU
+
+### updtae post by id 
+PUT http://localhost:3000/blog-api/blogs/user-post/656226278fa343de362fd513
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NjFmMTU4YWViZjY2NGQ0YjA3MTQ4NiIsImVtYWlsIjoidGVzdG1haWw1LmNvbSIsImlhdCI6MTcwMDkzMTA5MCwiZXhwIjoxNzAwOTMyMDUwfQ.2HqnbJoBK0vI7ES_7RvjCqUgh7mQJ7_JQbdnz_f_3GA
+Content-Type: application/json
+
+{
+    "image":"https://res.cloudinary.com/ddl5dr4cw/image/upload/v1700848745/cld-sample-2.jpg",
+    "title":"hills"
+}
+
+### delete postby id
+DELETE http://localhost:3000/blog-api/blogs/user-post/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NjFmMTU4YWViZjY2NGQ0YjA3MTQ4NiIsImVtYWlsIjoidGVzdG1haWw1LmNvbSIsImlhdCI6MTcwMDkzMjQxMiwiZXhwIjoxNzAwOTM2MDEyfQ.TDefQwVmnVHDBUIwmugPeymCLpP1EdG5DKEDib80CKk

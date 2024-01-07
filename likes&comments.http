@@ -1,0 +1,24 @@
+
+### sending blog data id
+POST http://localhost:3000/user/like/657496dd132660b438d1e177
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzM1Y2M2NGIyZWFlZDIzMTliNzYzNyIsImVtYWlsIjoidGVzdEAxMjMuY29tIiwiaWF0IjoxNzAyMTA3NjcwfQ.IKNDCnTnl560pycQNbKBiXODJ-qVhoxL7VZtehsv8hU
+
+
+### sending blog id
+
+POST http://localhost:3000/user/comments/657496dd132660b438d1e177
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzM1Y2M2NGIyZWFlZDIzMTliNzYzNyIsImVtYWlsIjoidGVzdEAxMjMuY29tIiwiaWF0IjoxNzAyMTA3NjcwfQ.IKNDCnTnl560pycQNbKBiXODJ-qVhoxL7VZtehsv8hU
+
+{
+    "comment":"this is the first comment lets check this work or not!"
+}
+
+### sending id of comment that is created and pushed in blog data // u can finf in blog.comments[0]// array
+#### delete comments in collection and arra
+DELETE http://localhost:3000/user/comments-remove/65769b43c5d914a08c6f560c
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzM1Y2M2NGIyZWFlZDIzMTliNzYzNyIsImVtYWlsIjoidGVzdEAxMjMuY29tIiwiaWF0IjoxNzAyMTA3NjcwfQ.IKNDCnTnl560pycQNbKBiXODJ-qVhoxL7VZtehsv8hU
+
+
+### update a comment need to be done
